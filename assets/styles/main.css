@@ -15,15 +15,6 @@ body {
   height: 200vh;
   font-family: "Cairo", sans-serif;
 }
-ul {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
-img {
-  max-width: 100%;
-}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -43,6 +34,82 @@ img {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+h2.main-title {
+  position: relative;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 100px auto;
+  font-size: 30px;
+  border: 2px solid black;
+  z-index: 1;
+  transition: var(--transition-duration);
+  text-transform: uppercase;
+}
+h2.main-title::before,
+h2.main-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+h2.main-title::before {
+  left: -30px;
+}
+h2.main-title::after {
+  right: -30px;
+}
+h2.main-title:hover {
+  color: #fff;
+  border-color: #fff;
+  transition-delay: 0.5s;
+}
+h2.main-title:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+h2.main-title:hover::after {
+  animation: right-move 0.5s linear forwards;
+  z-index: -1;
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
   }
 }
 
