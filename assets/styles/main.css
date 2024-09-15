@@ -717,3 +717,85 @@ section.team .member .info p {
 section.team .member:hover .info h3 {
   color: #777;
 }
+
+section.services {
+  padding: var(--section-padding) 0;
+  background-color: var(--section-bg-alt);
+}
+section.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+section.services .service {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  counter-increment: services;
+  transition: var(--transition-duration);
+}
+section.services .service::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: var(--main-color);
+  transition: var(--transition-duration);
+}
+section.services .service:hover {
+  transform: translateY(-10px);
+}
+section.services .service:hover::before {
+  width: 100%;
+}
+section.services .service i {
+  display: block;
+  margin: 30px auto 20px;
+  text-align: center;
+  color: #d5d5d5;
+}
+section.services .service h3 {
+  margin: 20px 0 40px;
+  text-align: center;
+  font-size: 25px;
+  color: var(--main-color);
+}
+section.services .service .info {
+  position: relative;
+  padding: 15px;
+  text-align: right;
+  background-color: #f9f9f9;
+}
+section.services .service .info::before {
+  content: "0" counter(services);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 100%;
+  padding-right: 15px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  background-color: var(--main-color);
+}
+section.services .service .info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 50px;
+  height: calc(100% + 0.4px);
+  background-color: #d5d5d5;
+
+  transform: skewX(-30deg);
+}
+section.services .service .info a {
+  color: var(--main-color);
+}
