@@ -20,6 +20,9 @@ ul {
 a {
   text-decoration: none;
 }
+img {
+  max-width: 100%;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -77,15 +80,20 @@ header .logo {
     width: 100%;
   }
 }
-header nav ul {
+header nav > ul {
   display: flex;
 }
 @media (max-width: 767px) {
-  header nav ul {
+  header nav > ul {
     margin: auto;
   }
 }
-header nav ul > li > a {
+header nav > ul > li:hover .mega-menu {
+  top: calc(100% + 1px);
+  opacity: 1;
+  z-index: 1;
+}
+header nav > ul > li > a {
   position: relative;
   display: flex;
   align-items: center;
@@ -103,7 +111,7 @@ header nav ul > li > a {
     font-size: 14px;
   }
 }
-header nav ul > li > a::before {
+header nav > ul > li > a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -113,12 +121,77 @@ header nav ul > li > a::before {
   background-color: var(--main-color);
   transition: var(--transition-duration);
 }
-header nav ul > li > a:hover {
+header nav > ul > li > a:hover {
   color: var(--main-color);
   background-color: #fafafa;
 }
-header nav ul > li > a:hover::before {
+header nav > ul > li > a:hover::before {
   left: 0;
+}
+header nav .mega-menu {
+  position: absolute;
+  top: calc(100% + 50px);
+  left: 0;
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  padding: 30px;
+  background-color: #fff;
+  border-bottom: 3px solid var(--main-color);
+  z-index: -1;
+  opacity: 0;
+  transition: top var(--transition-duration), opacity var(--transition-duration);
+}
+@media (max-width: 767px) {
+  header nav .mega-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 5px;
+  }
+}
+header nav .mega-menu .links {
+  flex: 1;
+  min-width: 240px;
+}
+header nav .mega-menu .links li {
+  position: relative;
+}
+header nav .mega-menu .links li:not(:last-child) {
+  border-bottom: 1px solid #e9e6e6;
+}
+@media (max-width: 767px) {
+  header nav .mega-menu .links:first-of-type li:last-child {
+    border-bottom: 1px solid #e9e6e6;
+  }
+}
+header nav .mega-menu .links li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fafafa;
+  z-index: -1;
+  transition: var(--transition-duration);
+}
+header nav .mega-menu .links li:hover::before {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  header nav .mega-menu .image {
+    display: none;
+  }
+}
+header nav .mega-menu .links li a {
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+header nav .mega-menu .links li a i {
+  margin-right: 10px;
 }
 
 section.hero {
