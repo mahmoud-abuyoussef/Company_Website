@@ -793,9 +793,46 @@ section.services .service .info::after {
   width: 50px;
   height: calc(100% + 0.4px);
   background-color: #d5d5d5;
-
   transform: skewX(-30deg);
 }
 section.services .service .info a {
   color: var(--main-color);
+}
+
+section.skills {
+  padding: var(--section-padding) 0;
+}
+section.skills .container {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  section.skills img {
+    display: none;
+  }
+}
+section.skills .skills-list {
+  flex: 1;
+}
+section.skills .skills-list .skill h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.skills .skills-list .skill h3 span {
+  padding: 3px 5px;
+  font-size: 14px;
+  color: var(--main-color);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+section.skills .skills-list .skill .progress {
+  height: 30px;
+  margin: 20px 0;
+  background-color: #eeeeee;
+}
+section.skills .skills-list .skill .progress span {
+  display: block;
+  height: 100%;
+  background-color: var(--main-color);
 }
