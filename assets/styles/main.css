@@ -8,6 +8,7 @@
   --main-color-alt: #1787e0;
   --transition-duration: 0.3s;
   --section-padding: 100px;
+  --section-bg-alt: #ececec;
 }
 html {
   scroll-behavior: smooth;
@@ -421,4 +422,56 @@ section.articles article:hover .info i {
   100% {
     transform: translateX(10px);
   }
+}
+
+section.gallery {
+  position: relative;
+  padding: var(--section-padding) 0;
+  background-color: var(--section-bg-alt);
+}
+section.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+section.gallery .image-box {
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+section.gallery .image-box .image {
+  position: relative;
+  overflow: hidden;
+}
+section.gallery .image-box .image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 20%);
+  opacity: 0;
+}
+section.gallery .image-box .image:hover::before {
+  animation: flashing 0.7s;
+  z-index: 1;
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+section.gallery .image-box .image img {
+  transition: var(--transition-duration);
+}
+section.gallery .image-box .image:hover img {
+  transform: rotate(5deg) scale(1.1);
 }
