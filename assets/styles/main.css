@@ -371,7 +371,6 @@ section.hero .go-down i {
 }
 
 section.articles {
-  position: relative;
   padding: var(--section-padding) 0;
 }
 section.articles .container {
@@ -425,7 +424,6 @@ section.articles article:hover .info i {
 }
 
 section.gallery {
-  position: relative;
   padding: var(--section-padding) 0;
   background-color: var(--section-bg-alt);
 }
@@ -477,7 +475,6 @@ section.gallery .image-box .image:hover img {
 }
 
 section.features {
-  position: relative;
   padding: var(--section-padding) 0;
   background-color: white;
 }
@@ -631,5 +628,92 @@ section.testimonials .testimonial .rate .filled {
 section.testimonials .testimonial p {
   margin-top: 10px;
   line-height: 1.5;
+  color: #777;
+}
+
+section.team {
+  padding: var(--section-padding) 0;
+}
+section.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+section.team .member {
+  position: relative;
+}
+section.team .member::before,
+section.team .member::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 10px;
+  z-index: -2;
+  background-color: #f3f3f3;
+  transition: var(--transition-duration);
+}
+section.team .member::before {
+  width: calc(100% - 60px);
+  z-index: -2;
+}
+section.team .member::after {
+  width: 0;
+  background-color: #e4e4e4;
+  z-index: -1;
+}
+section.team .member:hover::after {
+  width: calc(100% - 60px);
+}
+section.team .member .data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+}
+section.team .member .data img {
+  width: calc(100% - 60px);
+  border-radius: 10px;
+  transition: var(--transition-duration);
+}
+section.team .member:hover .data img {
+  filter: grayscale(100%);
+}
+section.team .member .data .social {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+section.team .member .data .social a {
+  display: block;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.team .member .data .social a i {
+  color: #777;
+  transition: var(--transition-duration);
+}
+section.team .member .data .social a:hover i {
+  color: var(--main-color);
+}
+section.team .member .info {
+  margin-left: 80px;
+}
+section.team .member .info h3 {
+  margin: 10px 0;
+  font-size: 22px;
+  color: var(--main-color);
+  transition: var(--transition-duration);
+}
+section.team .member .info p {
+  margin: 10px 0 25px;
+}
+section.team .member:hover .info h3 {
   color: #777;
 }
