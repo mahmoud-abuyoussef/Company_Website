@@ -836,3 +836,78 @@ section.skills .skills-list .skill .progress span {
   height: 100%;
   background-color: var(--main-color);
 }
+
+section.work-steps {
+  padding: var(--section-padding) 0;
+  background-color: var(--section-bg-alt);
+}
+section.work-steps .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 991px) {
+  section.work-steps .container {
+    flex-direction: column;
+  }
+}
+section.work-steps .image {
+  margin-right: 100px;
+}
+@media (max-width: 991px) {
+  section.work-steps .image {
+    margin: 0 0 50px;
+  }
+}
+section.work-steps .steps-list .step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  background-color: #f6f5f5;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .work-steps .steps-list .step {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+section.work-steps .steps-list .step::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #ededed;
+  z-index: -1;
+  transition: var(--transition-duration);
+}
+section.work-steps .steps-list .step:hover::before {
+  width: 100%;
+  height: 100%;
+}
+section.work-steps .steps-list .step img {
+  width: 64px;
+  margin-right: 20px;
+}
+@media (max-width: 991px) {
+  section.work-steps .steps-list .step img {
+    margin: 0 0 30px;
+  }
+}
+section.work-steps .steps-list .step .info h3 {
+  font-size: 22px;
+}
+section.work-steps .steps-list .step .info p {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #777;
+}
