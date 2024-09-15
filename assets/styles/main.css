@@ -12,6 +12,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  height: 200vh;
   font-family: "Cairo", sans-serif;
 }
 ul {
@@ -100,6 +101,7 @@ header nav > ul > li > a {
   justify-content: center;
   height: 72px;
   padding: 0 30px;
+  font-size: 18px;
   color: #000;
   transition: var(--transition-duration);
   overflow: hidden;
@@ -237,7 +239,7 @@ section.hero .section-content h1 {
 section.hero .section-content p {
   max-width: 500px;
   margin: 5px 0 0;
-  font-size: 24px;
+  font-size: 23px;
   line-height: 1.7;
   color: #666;
 }
