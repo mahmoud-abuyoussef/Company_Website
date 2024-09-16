@@ -129,6 +129,22 @@ h2.main-title:hover::after {
   z-index: 1;
 }
 
+.dots {
+  position: absolute;
+  background-image: url(../images/dots.png);
+  width: 204px;
+  height: 186px;
+  background-repeat: no-repeat;
+}
+.dots-up {
+  top: 200px;
+  right: 5px;
+}
+.dots-down {
+  left: 5px;
+  bottom: 200px;
+}
+
 header {
   position: relative;
   background-color: #fff;
@@ -927,6 +943,7 @@ section.work-steps .steps-list .step .info p {
 }
 
 section.events {
+  position: relative;
   padding: var(--section-padding) 0;
 }
 section.events .container {
@@ -1049,6 +1066,7 @@ section.events .subscribe form input[type="submit"]:hover {
 }
 
 section.pricing {
+  position: relative;
   padding: var(--section-padding) 0;
   background-color: var(--section-bg-alt);
 }
