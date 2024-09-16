@@ -1379,3 +1379,108 @@ section.discount .form .content form input[type="submit"] {
 section.discount .form .content form input[type="submit"]:hover {
   background-color: var(--main-color-alt);
 }
+
+footer {
+  padding: 70px 0 0;
+  margin-top: 40px;
+  background-color: #191919;
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+footer .col.info h3 {
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #fff;
+}
+footer .col.info .social {
+  display: flex;
+  margin-bottom: 20px;
+}
+footer .col.info .social li {
+  margin-right: 10px;
+}
+footer .col.info .social li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #b9b9b9;
+  background-color: #313131;
+  transition: var(--transition-duration);
+}
+footer .col.info .social li a.facebook:hover {
+  background-color: #1877f2;
+}
+footer .col.info .social li a.twitter:hover {
+  background-color: #1da1f2;
+}
+footer .col.info .social li a.youtube:hover {
+  background-color: #ff0000;
+}
+footer .col.info p {
+  line-height: 2;
+  color: #b9b9b9;
+}
+footer .col.links ul li {
+  padding: 15px 0;
+  transition: var(--transition-duration);
+}
+footer .col.links ul li:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+footer .col.links ul li:hover {
+  padding-left: 10px;
+}
+footer .col.links ul li a {
+  color: #b9b9b9;
+  transition: var(--transition-duration);
+}
+footer .col.links ul li a::before {
+  content: "\f101";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: var(--main-color);
+}
+footer .col.links ul li:hover a {
+  color: white;
+}
+footer .col.contact .line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #b9b9b9;
+}
+footer .col.contact .line i {
+  margin-right: 10px;
+  font-size: 25px;
+  color: var(--main-color);
+}
+footer .col.contact .line address {
+  font-style: normal;
+}
+footer .col.contact .line .info {
+  line-height: 1.7;
+  flex: 1;
+}
+footer .col.contact .line .info span {
+  display: block;
+}
+footer .col.gallary img {
+  width: 78px;
+  border: 3px solid white;
+  margin: 2px;
+}
+footer .copyright {
+  padding: 25px 0;
+  margin: 50px 0 0;
+  text-align: center;
+  color: white;
+  border-top: 1px solid #444;
+}
