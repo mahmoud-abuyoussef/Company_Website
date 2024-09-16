@@ -1277,3 +1277,105 @@ section.statistics .statistic .text {
   font-size: 22px;
   color: var(--main-color);
 }
+
+section.discount {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.discount .content {
+  padding: 0 20px;
+  text-align: center;
+}
+section.discount .content h2 {
+  margin: 30px 0;
+  letter-spacing: -2px;
+  font-size: 40px;
+}
+section.discount .content p {
+  max-width: 500px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+section.discount .image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+  color: #fff;
+  background-image: url(../images/discount-background1.jpg);
+  background-size: cover;
+  z-index: 1;
+  animation: change-bg 10s linear infinite;
+}
+@keyframes change-bg {
+  0%,
+  100% {
+    background-image: url(../images/discount-background1.jpg);
+  }
+  50% {
+    background-image: url(../images/discount-background2.jpg);
+  }
+}
+@media (min-width: 992px) {
+  section.discount .image {
+    flex-basis: 50%;
+  }
+}
+section.discount .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(23 135 224 / 97%);
+  z-index: -1;
+}
+section.discount .image .content img {
+  width: 300px;
+  padding-bottom: 30px;
+}
+section.discount .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+}
+@media (min-width: 992px) {
+  section.discount .form {
+    flex-basis: 50%;
+  }
+}
+section.discount .form .content form .input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+  background-color: #f9f9f9;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  caret-color: var(--main-color);
+}
+section.discount .form .content form textarea.input {
+  resize: none;
+  height: 200px;
+}
+section.discount .form .content form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  background-color: var(--main-color);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-duration);
+}
+section.discount .form .content form input[type="submit"]:hover {
+  background-color: var(--main-color-alt);
+}
