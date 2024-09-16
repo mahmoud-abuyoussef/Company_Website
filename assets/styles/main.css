@@ -1151,3 +1151,56 @@ section.pricing .plan a:hover {
   color: white;
   background-color: var(--main-color);
 }
+
+section.video {
+  padding: var(--section-padding) 0;
+}
+section.video .holder {
+  display: flex;
+  justify-content: center;
+  background-color: var(--section-bg-alt);
+  border: 1px solid #ddd;
+}
+@media (max-width: 991px) {
+  section.video .holder {
+    flex-direction: column;
+  }
+}
+section.video .holder .list {
+  min-width: 300px;
+  background-color: #fff;
+}
+section.video .holder .list .name {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+section.video .holder .list ul li {
+  padding: 20px;
+  border-top: 1px solid var(--section-bg-alt);
+  transition: var(--transition-duration);
+  cursor: pointer;
+}
+section.video .holder .list ul li:hover {
+  color: var(--main-color);
+  background-color: #fafefa;
+}
+section.video .holder .list ul li span {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+}
+section.video .holder .preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #e2e2e2;
+}
+section.video .holder .preview .info {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #fff;
+}
